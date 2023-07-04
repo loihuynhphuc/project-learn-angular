@@ -40,3 +40,44 @@ Operator: Các hàm được sử dụng để biến đổi, lọc và kết h�
 Subscription: Đại diện cho quá trình đăng ký và huỷ đăng ký quan sát một Observable.
 Subject: Là một loại Observable đặc biệt, có khả năng đồng thời làm cả Observable và Observer. Nó có thể phát ra các giá trị và cũng có thể được sử dụng để quan sát các giá trị khác.
 RxJS giúp xử lý các tác vụ bất đồng bộ, xử lý sự kiện và làm việc với các luồng dữ liệu một cách dễ dàng và mạnh mẽ. Nó cung cấp một cách trừu tượng hóa và tổ chức dữ liệu bất đồng bộ, giúp bạn viết mã dễ đọc, dễ bảo trì và có khả năng mở rộng trong các ứng dụng của mình.
+
+# operator 
+Trong RxJS, có ba loại chính của các Operator:
+
+Creation Operators: Được sử dụng để tạo ra các Observable từ các nguồn khác nhau như một giá trị đơn, một mảng, sự kiện DOM, hoặc kết nối websocket. Ví dụ: of, from, interval, fromEvent, ajax,...
+
+Transformation Operators: Được sử dụng để biến đổi các giá trị trong luồng dữ liệu. Chúng thay đổi hoặc chuyển đổi các giá trị ban đầu thành các giá trị mới. Ví dụ: map, pluck, filter, mergeMap, switchMap, scan,...
+
+Combination Operators: Được sử dụng để kết hợp nhiều Observable lại với nhau. Chúng kết hợp, ghép, hoặc nhóm các Observable lại thành một luồng dữ liệu mới. Ví dụ: merge, concat, combineLatest, forkJoin,...
+
+map: Trong RxJS, Operator map cũng thực hiện một chức năng tương tự, nhưng áp dụng cho mỗi giá trị trong luồng dữ liệu Observable thay vì một mảng. Nó cho phép biến đổi từng giá trị trong luồng dữ liệu thành các giá trị mới bằng cách ánh xạ chúng qua một hàm chuyển đổi
+
+map: Biến đổi từng giá trị trong luồng dữ liệu bằng cách ánh xạ chúng qua một hàm chuyển đổi.
+
+filter: Lọc các giá trị trong luồng dữ liệu dựa trên một điều kiện.
+
+take: Giới hạn số lượng giá trị được lấy từ luồng dữ liệu.
+
+mergeMap / flatMap: Biến đổi từng giá trị trong luồng dữ liệu thành một Observable khác và kết hợp các Observable con thành một luồng dữ liệu duy nhất.
+
+switchMap: Biến đổi từng giá trị trong luồng dữ liệu thành một Observable khác và chỉ phát ra giá trị từ Observable mới nhất, hủy bỏ bất kỳ Observable trước đó.
+
+catchError: Xử lý các lỗi trong luồng dữ liệu bằng cách thay thế chúng bằng giá trị mặc định hoặc luồng dữ liệu thay thế.
+
+tap: Thực hiện một hành động không ảnh hưởng đến giá trị trong luồng dữ liệu, như in ra log hoặc ghi lại các sự kiện.
+
+debounceTime: Chờ một khoảng thời gian sau khi nhận được giá trị cuối cùng, sau đó chỉ phát ra giá trị cuối cùng đó trong luồng dữ liệu.
+
+throttleTime: Chặn việc phát ra các giá trị trong luồng dữ liệu trong một khoảng thời gian sau khi đã phát ra một giá trị.
+
+distinctUntilChanged: Loại bỏ các giá trị trùng lặp liên tiếp trong luồng dữ liệu.
+
+combineLatest: Kết hợp các giá trị từ nhiều Observable thành một luồng dữ liệu mới khi có bất kỳ giá trị nào thay đổi.
+
+forkJoin: Chờ đến khi tất cả các Observable hoàn thành, sau đó phát ra một mảng chứa kết quả từng Observable.
+
+startWith: Chèn một giá trị ban đầu vào đầu luồng dữ liệu.
+
+reduce: Kết hợp các giá trị trong luồng dữ liệu thành một giá trị duy nhất bằng cách sử dụng một hàm kết hợp.
+
+retry: Thử lại Observable khi xảy ra lỗi.
